@@ -234,6 +234,6 @@ When you finish exploring Azure Machine Learning, you should delete the resource
 
 - Close the Azure Machine Learning studio tab and return to the Azure portal.
 - In the Azure portal, on the **Home** page, select **Resource groups**.
-- Select the resource group starting with **rg-genai...**.
+- Select the resource group `rg-prompt-flow-labs`.
 - At the top of the **Overview** page for your resource group, select **Delete resource group**.
 - Enter the resource group name to confirm you want to delete it, and select **Delete**.
