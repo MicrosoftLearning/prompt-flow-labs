@@ -171,8 +171,8 @@ The standard flow already includes a node that uses the LLM tool. You can find t
 
    user:
 
-   Entity type: &#123;&#123;entity_type&#123;&#123;
-   Text content: `{{text}}`
+   Entity type: {{entity_type}}
+   Text content: {{text}}
    Entities:
    ```
 
