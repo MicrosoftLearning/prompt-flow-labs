@@ -161,7 +161,7 @@ The standard flow already includes a node that uses the LLM tool. You can find t
 1. For **deployment_name**, select the `gpt-35-turbo` model you deployed in Azure OpenAI.
 1. Replace the prompt field with the following code:
 
-   ```
+   ```python
    system:
 
    Your task is to find entities of a certain type from the given text content.
@@ -171,8 +171,8 @@ The standard flow already includes a node that uses the LLM tool. You can find t
 
    user:
 
-   Entity type: `{{entity_type}}`
-   Text content: `{{text}}`
+   Entity type: {{entity_type}}
+   Text content: {{text}}
    Entities:
    ```
 
