@@ -161,22 +161,22 @@ The standard flow already includes a node that uses the LLM tool. You can find t
 1. For **deployment_name**, select the `gpt-35-turbo` model you deployed in Azure OpenAI.
 1. Replace the prompt field with the following code:
 
-    ```html
-    {# Prompt is a jinja2 template that generates prompt for LLM #}
+   ```python
+   {# Prompt is a jinja2 template that generates prompt for LLM #}
     
-    system:
+   system:
     
-    Your task is to find entities of certain type from the given text content.
-    If there're multiple entities, please return them all with comma separated, e.g. "entity1, entity2, entity3".
-    You should only return the entity list, nothing else.
-    If there's no such entity, please return "None".
+   Your task is to find entities of certain type from the given text content.
+   If there're multiple entities, please return them all with comma separated, e.g. "entity1, entity2, entity3".
+   You should only return the entity list, nothing else.
+   If there's no such entity, please return "None".
     
-    user:
+   user:
     
-    Entity type: {{entity_type}}
-    Text content: {{text}}
-    Entities:
-    ```
+   Entity type: {{entity_type}}
+   Text content: {{text}}
+   Entities:
+   ```
 
 1. Select **Validate and parse input**.
 1. Within the LLM node, in the **Inputs** section, configure the following:
