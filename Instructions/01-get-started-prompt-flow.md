@@ -162,7 +162,7 @@ The standard flow already includes a node that uses the LLM tool. You can find t
 1. Replace the prompt field with the following code:
 
 
-   ```yml
+   ```
    {% raw %}
    system:
 
