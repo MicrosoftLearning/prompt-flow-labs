@@ -161,7 +161,7 @@ The standard flow already includes a node that uses the LLM tool. You can find t
 1. For **deployment_name**, select the `gpt-35-turbo` model you deployed in Azure OpenAI.
 1. Replace the prompt field with the following code:
 
-    ```
+    ```md
     {# Prompt is a jinja2 template that generates prompt for LLM #}
     
     system:
