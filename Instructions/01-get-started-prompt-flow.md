@@ -193,18 +193,18 @@ To extract only the key information from the result of the model, you can use th
 1. Replace the name with `cleansing`.
 1. Replace the code with the following:
 
-    ```python
-    from typing import List
-    from promptflow import tool
+   ```python
+   from typing import List
+   from promptflow import tool
     
     
-    @tool
-    def cleansing(entities_str: str) -> List[str]:
-        # Split, remove leading and trailing spaces/tabs/dots
-        parts = entities_str.split(",")
-        cleaned_parts = [part.strip(" \t.\"") for part in parts]
-        entities = [part for part in cleaned_parts if len(part) > 0]
-        return entities
+   @tool
+   def cleansing(entities_str: str) -> List[str]:
+       # Split, remove leading and trailing spaces/tabs/dots
+       parts = entities_str.split(",")
+       cleaned_parts = [part.strip(" \t.\"") for part in parts]
+       entities = [part for part in cleaned_parts if len(part) > 0]
+       return entities
     
     ```
 
