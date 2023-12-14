@@ -163,6 +163,7 @@ The standard flow already includes a node that uses the LLM tool. You can find t
 
 
    ```yml
+   {% raw %}
    system:
 
    Your task is to find entities of a certain type from the given text content.
@@ -171,10 +172,11 @@ The standard flow already includes a node that uses the LLM tool. You can find t
    If there's no such entity, please return "None".
 
    user:
-
+   
    Entity type: {{entity_type}}
    Text content: {{text}}
    Entities:
+   {% endraw %}
    ```
 
 1. Select **Validate and parse input**.
