@@ -161,20 +161,18 @@ The standard flow already includes a node that uses the LLM tool. You can find t
 1. For **deployment_name**, select the `gpt-35-turbo` model you deployed in Azure OpenAI.
 1. Replace the prompt field with the following code:
 
-   ```python
-   {# Prompt is a jinja2 template that generates prompt for LLM #}
-    
+   ```
    system:
-    
-   Your task is to find entities of certain type from the given text content.
+
+   Your task is to find entities of a certain type from the given text content.
    If there're multiple entities, please return them all with comma separated, e.g. "entity1, entity2, entity3".
    You should only return the entity list, nothing else.
    If there's no such entity, please return "None".
-    
+
    user:
-    
-   Entity type: {{entity_type}}
-   Text content: {{text}}
+
+   Entity type: \{\{entity_type\}\}
+   Text content: \{\{text\}\}
    Entities:
    ```
 
@@ -206,7 +204,7 @@ To extract only the key information from the result of the model, you can use th
        entities = [part for part in cleaned_parts if len(part) > 0]
        return entities
     
-    ```
+   ```
 
 1. Select **Validate and parse input**.
 1. Within the Python node, in the **Inputs** section, set the value of `entities_str` to `${NER_LLM.output}`.
