@@ -119,6 +119,9 @@ To run a flow, you need a runtime, which includes the necessary packages install
     - **Select AzureML compute instance**: *Select the compute instance created in the previous section*
     - **Custom application**: `New`
     - **Environment**: `Use default environment`
+
+    > **Note**: You may need to **authenticate** to use the compute instance as runtime.
+
 1. When prompted to auto restart the compute instance, select **Confirm**.
 
 Your compute instance will restart to create the new runtime. While the compute instance is restarting, you can continue with the next steps.
@@ -162,7 +165,7 @@ The standard flow already includes a node that uses the LLM tool. You can find t
 1. Replace the prompt field with the following code:
 
 
-   ```
+   ```yml
    {% raw %}
    system:
 
