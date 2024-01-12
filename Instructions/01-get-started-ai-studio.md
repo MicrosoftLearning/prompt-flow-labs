@@ -17,10 +17,6 @@ In this exercise, you'll use Azure AI Studio's prompt flow to create an LLM appl
 
 You first need to create a project in the Azure AI Studio to create the necessary Azure resources. Then, you can deploy a GPT model with the Azure OpenAI service. Once you have the necessary resources, you can create the flow. Finally you'll run the flow to test it and view the sample output.
 
-## Before you start
-
-You'll need an [Azure subscription](https://azure.microsoft.com/free?azure-portal=true) in which you have administrative-level access.
-
 ## Create a project in the Azure AI Studio
 
 You start by creating an Azure AI Studio project and the Azure AI resources to support it.
@@ -37,37 +33,9 @@ You start by creating an Azure AI Studio project and the Azure AI resources to s
 1. Review your configuration and create your project.
 1. Wait 5-10 minutes for your project to be created.
 
-## Create the Azure OpenAI service to deploy a GPT model
+## Deploy a GPT model
 
-To use a LLM model in prompt flow, you need to deploy a model through Azure OpenAI first.
-
-### Provision an Azure OpenAI resource
-
-If you don't already have one, provision an Azure OpenAI resource in your Azure subscription.
-
-1. Sign into the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`.
-2. Create an **Azure OpenAI** resource with the following settings:
-    - **Subscription**: *Select an Azure subscription that has been approved for access to the Azure OpenAI service*
-    - **Resource group**: `rg-prompt-flow-labs`
-    - **Region**: *Make a **random** choice from any of the available regions*\*
-    - **Name**: *A unique name of your choice*
-    - **Pricing tier**: Standard S0
-
-    > \* Azure OpenAI resources are constrained by regional quotas. Randomly choosing a region reduces the risk of a single region reaching its quota limit in scenarios where you are sharing a subscription with other users. In the event of a quota limit being reached later in the exercise, there's a possibility you may need to create another resource in a different region.
-
-3. Wait for deployment to complete. Then go to the deployed Azure OpenAI resource in the Azure portal.
-
-### Save the endpoint and key
-
-To authorize Azure Machine Learning to use a model deployed with Azure OpenAI, it needs the endpoint and key.
-
-1. Navigate to the **Keys and Endpoint** page of your Azure OpenAI resource.
-1. Copy the value of the **Endpoint** and store it in a notepad for future use. The value should be similar to `https://<your-openai-service-name>.openai.azure.com/`.
-1. Copy the value of one of the **Keys** and store it in a notepad for future use.
-
-### Deploy a model
-
-The Azure AI Studio allows you to deploy OpenAI models that you can use in your flows.
+To use a LLM model in prompt flow, you need to deploy a model first. The Azure AI Studio allows you to deploy OpenAI models that you can use in your flows.
 
 1. In the navigation pane on the left, under **Components**, select the **Deployments** page.
 1. In Azure OpenAI Studio, navigate to the **Deployments** page.
@@ -75,6 +43,7 @@ The Azure AI Studio allows you to deploy OpenAI models that you can use in your 
     - **Model**: `gpt-35-turbo`
     - **Model version**: *Leave the default value*
     - **Deployment name**: `gpt-35-turbo`
+    - Set the **Advanced** options to use the default content filter and to restrict the tokens-per-minute (TPM) to **5K**.
 
 Now that you have your LLM model deployed, you can create a flow in Azure AI Studio that calls the deployed model.
 
